@@ -1,3 +1,5 @@
+/* ===================== TIMELINE ===================== */
+
 .timeline {
   padding: 80px 8%;
   background: #0f172a;
@@ -5,22 +7,27 @@
 
 .timeline h2 {
   text-align: center;
-  margin-bottom: 50px;
   font-size: 3rem;
+  margin: 0 0 50px;
   color: white;
 }
 
 .timeline-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 30px;
+  align-items: stretch; /* har row ke cards barabar height ke */
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 .timeline-card {
+  display: flex;
+  flex-direction: column;
   background: #1e293b;
-  border-radius: 15px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transition: 0.3s;
 }
 
@@ -28,40 +35,93 @@
   transform: translateY(-8px);
 }
 
+/* Sab images ek ratio mein, chehre upar rahenge */
 .timeline-card img {
+  display: block;
   width: 100%;
-  height: 250px;
+  height: auto;
+  max-width: none;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: center top;
 }
 
 .timeline-content {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;               /* bacha hua space le leta hai */
+  padding: 24px;
 }
 
 .timeline-content h3 {
+  margin: 0 0 8px;
+  font-size: 1.8rem;
   color: #38bdf8;
-  margin-bottom: 10px;
-  font-size: 1.5rem;
 }
 
 .timeline-content h4 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
   color: white;
-  margin-bottom: 10px;
-  font-size: 1.3rem;
 }
 
 .timeline-content p {
-  color: #cbd5e1;
+  margin: 0 0 18px;
+  font-size: 1.05rem;
   line-height: 1.6;
-  margin-bottom: 15px;
+  color: #cbd5e1;
 }
 
+/* "Learn More" hamesha card ke neeche */
 .timeline-content a {
+  margin-top: auto;
+  align-self: flex-start;
   color: #38bdf8;
+  font-weight: 700;
   text-decoration: none;
-  font-weight: bold;
 }
 
 .timeline-content a:hover {
-  color: #7dd3fc;
+  text-decoration: underline;
+}
+
+/* ===================== TABLET ===================== */
+
+@media (max-width: 992px) {
+  .timeline {
+    padding: 60px 5%;
+  }
+
+  .timeline h2 {
+    font-size: 2.4rem;
+  }
+}
+
+/* ===================== MOBILE ===================== */
+
+@media (max-width: 600px) {
+  .timeline {
+    padding: 50px 16px;
+  }
+
+  .timeline h2 {
+    font-size: 2rem;
+    margin-bottom: 32px;
+  }
+
+  .timeline-container {
+    gap: 22px;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .timeline-content h4 {
+    font-size: 1.25rem;
+  }
 }

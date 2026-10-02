@@ -1,13 +1,21 @@
 import "./Navbar.css";
+import { useState } from "react";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
-      <div className="logo">
-        GandhiVerse
+      <div className="logo">GandhiVerse</div>
+
+      <div
+        className="menu-icon"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        ☰
       </div>
 
-      <ul className="nav-links">
+      <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
         <li><a href="#home">Home</a></li>
         <li><a href="#timeline">Timeline</a></li>
         <li><a href="#movements">Movements</a></li>
@@ -19,18 +27,6 @@ function Navbar() {
         <li><a href="#quiz">Quiz</a></li>
         <li><a href="#developer">Developer</a></li>
       </ul>
-
-      <div className="developer-info">
-        <img
-          src="/images/developer/prashant.jpeg"
-          alt="Prashant Yadav"
-          className="navbar-profile"
-        />
-
-        <span className="developer-name">
-          Developed by Prashant Yadav
-        </span>
-      </div>
     </nav>
   );
 }

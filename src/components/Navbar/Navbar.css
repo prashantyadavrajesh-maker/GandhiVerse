@@ -3,12 +3,13 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: 75px;
+  background: #020c1b;
+  border-bottom: 1px solid #233554;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 50px;
-  background: #020c1b;
-  border-bottom: 1px solid #233554;
+  padding: 0 40px;
   z-index: 1000;
   box-sizing: border-box;
 }
@@ -18,13 +19,11 @@
   font-weight: 700;
   color: #64ffda;
   cursor: pointer;
-  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
-  align-items: center;
-  gap: 22px;
+  gap: 25px;
   list-style: none;
 }
 
@@ -36,7 +35,6 @@
   text-decoration: none;
   color: #ccd6f6;
   font-size: 0.95rem;
-  font-weight: 500;
   transition: 0.3s;
 }
 
@@ -44,98 +42,47 @@
   color: #64ffda;
 }
 
-.developer-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.menu-icon {
+  display: none;
 }
 
-.navbar-profile {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #64ffda;
-}
+/* ================= MOBILE ================= */
 
-.developer-name {
-  color: #64ffda;
-  font-size: 0.85rem;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-/* Large Tablet */
-@media (max-width: 1200px) {
-  .navbar {
-    padding: 15px 25px;
-  }
-
-  .nav-links {
-    gap: 14px;
-  }
-
-  .nav-links a {
-    font-size: 0.85rem;
-  }
-
-  .developer-name {
-    font-size: 0.75rem;
-  }
-
-  .navbar-profile {
-    width: 34px;
-    height: 34px;
-  }
-}
-
-/* Tablet */
-@media (max-width: 992px) {
-  .navbar {
-    flex-direction: column;
-    padding: 15px;
-  }
-
-  .logo {
-    margin-bottom: 12px;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-
-  .developer-info {
-    justify-content: center;
-  }
-}
-
-/* Mobile */
 @media (max-width: 768px) {
   .navbar {
-    padding: 12px;
+    padding: 0 20px;
   }
 
   .logo {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+  }
+
+  .menu-icon {
+    display: block;
+    color: #64ffda;
+    font-size: 32px;
+    cursor: pointer;
   }
 
   .nav-links {
-    gap: 10px;
+    position: absolute;
+    top: 75px;
+    left: -100%;
+    width: 100%;
+    background: #020c1b;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 25px 0;
+    transition: 0.4s ease;
+    border-top: 1px solid #233554;
+  }
+
+  .nav-links.active {
+    left: 0;
   }
 
   .nav-links a {
-    font-size: 0.8rem;
-  }
-
-  .developer-name {
-    font-size: 0.75rem;
-  }
-
-  .navbar-profile {
-    width: 30px;
-    height: 30px;
+    font-size: 1rem;
   }
 }
