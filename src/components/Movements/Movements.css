@@ -1,0 +1,62 @@
+.movements {
+  padding: 80px 8%;
+  background: #0f172a;
+}
+
+.movements h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 3rem;
+  color: white;
+}
+
+.movements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.movement-card {
+  background: #1e293b;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.movement-card:hover {
+  transform: translateY(-8px);
+}
+
+.movement-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.movement-content {
+  padding: 20px;
+}
+
+.movement-content h3 {
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.movement-content p {
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.movement-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.movement-link:hover {
+  color: #7dd3fc;
+}

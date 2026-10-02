@@ -1,0 +1,35 @@
+.quotes {
+  background: #081b38;
+  padding: 80px 5%;
+}
+
+.quotes-title {
+  text-align: center;
+  color: #f8a62b;
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.quote-card {
+  background: #0d1f3c;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+}
+
+.quote-card p {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.quote-card span {
+  color: #f8a62b;
+}
